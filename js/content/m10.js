@@ -15,7 +15,7 @@ registerModule({
         { label: "math: Mathematical functions",
           url: "https://docs.python.org/3/library/math.html" },
         { label: "The Python Language Reference, 7. Simple statements (The import statement)",
-          url: "https://docs.python.org/3/reference/simple_stmts.html" }
+          url: "https://docs.python.org/3/reference/simple_stmts.html#the-import-statement" }
       ],
       body: `<p>A <strong>module</strong> is a file of Python code (functions, variables and more) that other code can use. Python ships with hundreds of them in its <strong>standard library</strong>. To use one, you <code>import</code> it.</p>
 <h3>import module</h3>
@@ -53,7 +53,7 @@ print(len(names), "names, for example:", names[:6])</pre>
   <li><strong>Third-party packages</strong>: code other people publish, installed with <code>pip</code>.</li>
 </ul>
 <p>When you import a module, Python runs its code once and remembers the result, so importing the same module again is cheap.</p>
-<div class="tip"><strong>Tip</strong> Never name your own file after a module you use, such as <code>math.py</code> or <code>random.py</code>. Python finds your file first and the real module stops working.</div>`,
+<div class="tip"><strong>Tip</strong> Never name your own file after a module you use, such as <code>random.py</code> or <code>json.py</code>. Python finds your file first and the real module stops working.</div>`,
       quiz: [
         { q: `After <code>from math import sqrt</code>, which call works?`,
           options: ["math.sqrt(9)", "sqrt(9)", "both", "neither"],
@@ -101,14 +101,14 @@ print(root, crates, pad_area)`
       title: "Standard Library Tour",
       minutes: 10,
       sources: [
-        { label: "The Python Tutorial, 10. Brief Tour of the Standard Library",
+        { label: "The Python Tutorial, 10. Brief tour of the standard library",
           url: "https://docs.python.org/3/tutorial/stdlib.html" },
         { label: "random: Generate pseudo-random numbers",
           url: "https://docs.python.org/3/library/random.html" },
         { label: "datetime: Basic date and time types",
           url: "https://docs.python.org/3/library/datetime.html" },
         { label: "collections: Container datatypes (Counter)",
-          url: "https://docs.python.org/3/library/collections.html" }
+          url: "https://docs.python.org/3/library/collections.html#counter-objects" }
       ],
       body: `<p>Python is said to come with "batteries included". Here are four standard modules you will use again and again.</p>
 <h3>random</h3>
@@ -218,7 +218,7 @@ print(top, arrival, dock)`
       minutes: 10,
       sources: [
         { label: "The Python Tutorial, 6. Modules (Executing modules as scripts)",
-          url: "https://docs.python.org/3/tutorial/modules.html" },
+          url: "https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts" },
         { label: "__main__: Top-level code environment",
           url: "https://docs.python.org/3/library/__main__.html" },
         { label: "The Python Tutorial, 12. Virtual Environments and Packages",
@@ -242,7 +242,7 @@ from spaceutils import ly_to_km
 
 print(spaceutils.LIGHT_YEAR_KM)
 print(ly_to_km(4.2))</pre>
-<p>Python looks for modules in the folder of the script you run first, then in the standard library and installed packages. A folder of modules (a <em>package</em>) lets you organise larger projects.</p>
+<p>Apart from a few modules built into the interpreter itself, Python looks for modules in the folder of the script you run first, then in the standard library and installed packages. A folder of modules (a <em>package</em>) lets you organise larger projects.</p>
 <h3>if __name__ == "__main__":</h3>
 <p>Every module has a variable <code>__name__</code>. When a file is run directly, its <code>__name__</code> is <code>"__main__"</code>. When it is imported, <code>__name__</code> is the module's name, such as <code>"spaceutils"</code>. This lets one file be both a reusable module and a runnable program:</p>
 <pre class="code" data-run>def ly_to_km(ly):
@@ -271,7 +271,7 @@ python -m pip install "requests==2.31.0"
 python -m pip list
 python -m pip freeze &gt; requirements.txt
 python -m pip install -r requirements.txt</pre>
-<p>Running pip as <code>python -m pip</code> guarantees it installs into the Python you are actually using. A <code>requirements.txt</code> file records your project's packages so someone else can install the same set. On Windows you may need <code>py</code> instead of <code>python</code>.</p>
+<p>Running pip as <code>python -m pip</code> guarantees it installs into the Python you are actually using. A <code>requirements.txt</code> file records your project's packages so someone else can install the same set. On Windows you may need <code>py</code>, and on macOS or Linux <code>python3</code>, instead of <code>python</code>.</p>
 <div class="tip"><strong>Tip</strong> Only install packages you trust from PyPI, and spell names carefully. Look-alike package names are a known way to spread malicious code.</div>`,
       quiz: [
         { q: `A file <code>tools.py</code> is imported by another program. What is <code>__name__</code> inside <code>tools.py</code>?`,

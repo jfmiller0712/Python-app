@@ -13,12 +13,14 @@ registerModule({
         { label: "The Python Tutorial, 8. Errors and Exceptions",
           url: "https://docs.python.org/3/tutorial/errors.html" },
         { label: "Built-in Exceptions",
-          url: "https://docs.python.org/3/library/exceptions.html" }
+          url: "https://docs.python.org/3/builtins/exceptions.html" }
       ],
       body: `<p>Every programmer sees errors all day long. They are not failures; they are Python telling you exactly what went wrong and where. There are two broad kinds.</p>
 <h3>Syntax errors</h3>
 <p>A <strong>syntax error</strong> means the code is not valid Python, so nothing runs at all. Python points at the place where it got confused.</p>
-<pre class="code">print("Hello"
+<pre class="code">  File "hello.py", line 1
+    print("Hello"
+         ^
 SyntaxError: '(' was never closed</pre>
 <p>Typical causes: a missing bracket or quote, a forgotten colon after <code>if</code> or <code>for</code>, or wrong indentation (an <code>IndentationError</code>, a kind of syntax error).</p>
 <h3>Exceptions</h3>
@@ -30,8 +32,10 @@ print(average([]))</pre>
 <pre class="code">Traceback (most recent call last):
   File "fleet.py", line 4, in &lt;module&gt;
     print(average([]))
+          ~~~~~~~^^^^
   File "fleet.py", line 2, in average
     return sum(values) / len(values)
+           ~~~~~~~~~~~~^~~~~~~~~~~~~
 ZeroDivisionError: division by zero</pre>
 <h3>How to read a traceback</h3>
 <ul>
@@ -39,7 +43,7 @@ ZeroDivisionError: division by zero</pre>
   <li><strong>Move up for the location.</strong> The lines above show the chain of calls, oldest first ("most recent call last"). The lowest <code>File ... line ...</code> entry is where the error actually happened: line 2, inside <code>average</code>.</li>
   <li><strong>Check your values.</strong> Ask why that line failed: <code>len(values)</code> was 0 because an empty list was passed in on line 4.</li>
 </ul>
-<p>Recent Python versions also print <code>^</code> and <code>~</code> marker lines under the exact part of the line that failed.</p>
+<p>Since Python 3.11, tracebacks also print marker lines under the code: the <code>^</code> characters point at the exact operation or call that failed (here the <code>/</code>), and the <code>~</code> characters underline the rest of that expression.</p>
 <h3>Common exceptions</h3>
 <ul>
   <li><code>ValueError</code>: right type, bad value. <code>int("abc")</code> gives <em>invalid literal for int() with base 10: 'abc'</em>.</li>
@@ -117,9 +121,9 @@ print("Pilot: " + crew["pilot"])`
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 8. Errors and Exceptions (Handling Exceptions)",
-          url: "https://docs.python.org/3/tutorial/errors.html" },
+          url: "https://docs.python.org/3/tutorial/errors.html#handling-exceptions" },
         { label: "The Python Language Reference, 8. Compound statements (The try statement)",
-          url: "https://docs.python.org/3/reference/compound_stmts.html" }
+          url: "https://docs.python.org/3/reference/compound_stmts.html#the-try-statement" }
       ],
       body: `<p>Sometimes errors are expected: a user types letters where you wanted a number, or a key might be missing. Instead of letting the program crash, you can <strong>handle</strong> the exception with <code>try</code> and <code>except</code>.</p>
 <pre class="code" data-run>for text in ["12", "seven", "3"]:
@@ -262,7 +266,7 @@ print(lookup({"fuel": 40}, "water"))`
         { label: "The Python Tutorial, 8. Errors and Exceptions (Raising Exceptions; User-defined Exceptions)",
           url: "https://docs.python.org/3/tutorial/errors.html" },
         { label: "Built-in Exceptions",
-          url: "https://docs.python.org/3/library/exceptions.html" },
+          url: "https://docs.python.org/3/builtins/exceptions.html" },
         { label: "Programming FAQ",
           url: "https://docs.python.org/3/faq/programming.html" }
       ],

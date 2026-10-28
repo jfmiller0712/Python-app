@@ -15,7 +15,7 @@ registerModule({
         { label: "The Python Tutorial, 3. An Informal Introduction to Python",
           url: "https://docs.python.org/3/tutorial/introduction.html" },
         { label: "Built-in Functions: print()",
-          url: "https://docs.python.org/3/library/functions.html" }
+          url: "https://docs.python.org/3/builtins/functions.html#print" }
       ],
       body: `<p>Python is a programming language: a precise way of writing instructions that a computer can follow. It was created by Guido van Rossum and first released in 1991. Today it is one of the most widely used languages in the world.</p>
 <h3>Why Python?</h3>

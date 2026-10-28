@@ -13,7 +13,7 @@ registerModule({
         { label: "The Python Tutorial, 5. Data Structures (Dictionaries)",
           url: "https://docs.python.org/3/tutorial/datastructures.html" },
         { label: "Built-in Types: Mapping Types (dict)",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html" }
       ],
       body: `<p>A list finds items by position. A <strong>dictionary</strong> (type <code>dict</code>) finds values by a <strong>key</strong> you choose, such as a name. Each entry is a <em>key: value</em> pair, written inside curly braces.</p>
 <pre class="code" data-run>planet = {"name": "Mars", "moons": 2, "rocky": True}
@@ -108,7 +108,7 @@ for name, role in crew.items():
         { label: "The Python Tutorial, 5. Data Structures (Looping Techniques)",
           url: "https://docs.python.org/3/tutorial/datastructures.html" },
         { label: "Built-in Types: Mapping Types (dict)",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html" }
       ],
       body: `<p>Real data is rarely a single flat list. Lists and dictionaries can be nested inside each other to describe almost anything.</p>
 <h3>A list of dictionaries</h3>
@@ -209,7 +209,7 @@ for planet, n in visits.items():
         { label: "The Python Tutorial, 5. Data Structures (Sets; Dictionaries)",
           url: "https://docs.python.org/3/tutorial/datastructures.html" },
         { label: "Built-in Types: Set Types (set, frozenset)",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html" }
       ],
       body: `<p>A <strong>set</strong> is an unordered collection of <em>unique</em> items. Write it with curly braces, or build one with <code>set()</code>. Duplicates simply disappear.</p>
 <pre class="code" data-run>signals = {"ping", "beep", "ping", "pong"}

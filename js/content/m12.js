@@ -142,7 +142,7 @@ assert b.count() == 0` }
       minutes: 10,
       sources: [
         { label: "Data model: object.__repr__ and object.__str__",
-          url: "https://docs.python.org/3/reference/datamodel.html" },
+          url: "https://docs.python.org/3/reference/datamodel.html#object.__repr__" },
         { label: "dataclasses: Data Classes",
           url: "https://docs.python.org/3/library/dataclasses.html" },
         { label: "PEP 557: Data Classes",
@@ -261,9 +261,9 @@ class Crate:
       minutes: 10,
       sources: [
         { label: "The Python Tutorial, 9.5 Inheritance",
-          url: "https://docs.python.org/3/tutorial/classes.html" },
+          url: "https://docs.python.org/3/tutorial/classes.html#inheritance" },
         { label: "Built-in Functions: super(), isinstance(), issubclass()",
-          url: "https://docs.python.org/3/library/functions.html" }
+          url: "https://docs.python.org/3/builtins/functions.html" }
       ],
       body: `<p>Different ships share a lot: a name, fuel, the ability to fly. Rather than copy that code into each class, you can write it once in a <strong>base class</strong> and let other classes <strong>inherit</strong> from it.</p>
 <h3>Inheriting</h3>

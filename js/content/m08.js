@@ -11,7 +11,7 @@ registerModule({
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 4. More Control Flow Tools (Defining Functions)",
-          url: "https://docs.python.org/3/tutorial/controlflow.html" },
+          url: "https://docs.python.org/3/tutorial/controlflow.html#defining-functions" },
         { label: "PEP 257: Docstring Conventions",
           url: "https://peps.python.org/pep-0257/" }
       ],
@@ -150,7 +150,7 @@ print(fuel_status(0), fuel_status(10), fuel_status(80))`
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 4. More Control Flow Tools (More on Defining Functions)",
-          url: "https://docs.python.org/3/tutorial/controlflow.html" },
+          url: "https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions" },
         { label: "Glossary: argument, parameter",
           url: "https://docs.python.org/3/glossary.html" }
       ],
@@ -281,11 +281,11 @@ print(tag("Comet", speed=7, crew=3))`
       minutes: 10,
       sources: [
         { label: "The Python Tutorial, 9. Classes (Python Scopes and Namespaces)",
-          url: "https://docs.python.org/3/tutorial/classes.html" },
+          url: "https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces" },
         { label: "The Python Tutorial, 4. More Control Flow Tools (Lambda Expressions)",
-          url: "https://docs.python.org/3/tutorial/controlflow.html" },
+          url: "https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions" },
         { label: "Sorting Techniques (HOWTO): Key Functions",
-          url: "https://docs.python.org/3/howto/sorting.html" }
+          url: "https://docs.python.org/3/howto/sorting.html#key-functions" }
       ],
       body: `<h3>Local and global scope</h3>
 <p>A variable created inside a function is <strong>local</strong>: it exists only while the function runs and is invisible outside it. Variables created at the top level of your program are <strong>global</strong> and can be <em>read</em> inside functions.</p>

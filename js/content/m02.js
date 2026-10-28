@@ -13,7 +13,7 @@ registerModule({
         { label: "The Python Tutorial, 3. An Informal Introduction to Python",
           url: "https://docs.python.org/3/tutorial/introduction.html" },
         { label: "Language Reference, 7. Simple statements (assignment)",
-          url: "https://docs.python.org/3/reference/simple_stmts.html" },
+          url: "https://docs.python.org/3/reference/simple_stmts.html#assignment-statements" },
         { label: "PEP 8 - Style Guide for Python Code",
           url: "https://peps.python.org/pep-0008/" }
       ],
@@ -94,11 +94,11 @@ print(n)</pre>`,
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 3.1.1 Numbers",
-          url: "https://docs.python.org/3/tutorial/introduction.html" },
+          url: "https://docs.python.org/3/tutorial/introduction.html#numbers" },
         { label: "Built-in Types: Numeric Types",
-          url: "https://docs.python.org/3/library/stdtypes.html" },
+          url: "https://docs.python.org/3/builtins/stdtypes.html#numeric-types-int-float-complex" },
         { label: "Language Reference, 6. Expressions (operator precedence)",
-          url: "https://docs.python.org/3/reference/expressions.html" },
+          url: "https://docs.python.org/3/reference/expressions.html#operator-precedence" },
         { label: "The Python Tutorial, 15. Floating-Point Arithmetic",
           url: "https://docs.python.org/3/tutorial/floatingpoint.html" }
       ],
@@ -122,7 +122,7 @@ print(minutes // 60, "hours and", minutes % 60, "minutes")</pre>
 <p><code>%</code> is also a quick way to test evenness: <code>n % 2</code> is <code>0</code> for even numbers and <code>1</code> for odd ones.</p>
 <h3>Mixing ints and floats</h3>
 <p>If either side of an operator is a float, the result is a float: <code>3 + 1.5</code> is <code>4.5</code>, and <code>2 * 3.0</code> is <code>6.0</code>.</p>
-<p>Floats are stored in binary, so some decimals cannot be stored exactly. <code>0.1 + 0.2</code> prints <code>0.30000000000000004</code>. This is normal in every language. Use <code>round(value, 2)</code> to round to 2 decimal places when displaying.</p>
+<p>Floats are stored in binary, so some decimals cannot be stored exactly. <code>0.1 + 0.2</code> prints <code>0.30000000000000004</code>. This happens in most programming languages, not just Python. Use <code>round(value, 2)</code> to round to 2 decimal places when displaying.</p>
 <pre class="code" data-run>print(0.1 + 0.2)
 print(round(0.1 + 0.2, 2))</pre>
 <h3>Precedence: which operation goes first?</h3>
@@ -182,11 +182,11 @@ print(2 ** 3 ** 2)   # 512, ** groups right to left: 2 ** 9</pre>
       minutes: 8,
       sources: [
         { label: "Built-in Functions (type, int, float, str)",
-          url: "https://docs.python.org/3/library/functions.html" },
+          url: "https://docs.python.org/3/builtins/functions.html" },
         { label: "Built-in Constants (None)",
-          url: "https://docs.python.org/3/library/constants.html" },
+          url: "https://docs.python.org/3/builtins/constants.html#None" },
         { label: "Built-in Types",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html" }
       ],
       body: `<p>Every value in Python has a <em>type</em>. The type decides what you can do with the value. The built-in function <code>type()</code> tells you a value's type.</p>
 <pre class="code" data-run>print(type(42))

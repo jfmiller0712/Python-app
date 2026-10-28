@@ -239,7 +239,7 @@ def crew_roles(names: list[str], roles: list[str]) -> dict[str, str]:
         { label: "unittest: Unit testing framework",
           url: "https://docs.python.org/3/library/unittest.html" },
         { label: "The assert statement (Simple statements)",
-          url: "https://docs.python.org/3/reference/simple_stmts.html" },
+          url: "https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement" },
         { label: "doctest: Test interactive Python examples",
           url: "https://docs.python.org/3/library/doctest.html" },
         { label: "The Python Tutorial",

@@ -11,7 +11,7 @@ registerModule({
       minutes: 8,
       sources: [
         { label: "The Python Tutorial, 3.1.2 Text",
-          url: "https://docs.python.org/3/tutorial/introduction.html" },
+          url: "https://docs.python.org/3/tutorial/introduction.html#text" },
         { label: "Language Reference, 2. Lexical analysis (string literals and escape sequences)",
           url: "https://docs.python.org/3/reference/lexical_analysis.html" }
       ],
@@ -94,9 +94,9 @@ print(len(""))   # the empty string has length 0</pre>
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 3.1.2 Text (indexing and slicing)",
-          url: "https://docs.python.org/3/tutorial/introduction.html" },
+          url: "https://docs.python.org/3/tutorial/introduction.html#text" },
         { label: "Built-in Types: Common Sequence Operations",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html#common-sequence-operations" }
       ],
       body: `<p>Each character in a string has a position, called its <em>index</em>. Python counts from <strong>0</strong>, not 1.</p>
 <pre class="code"> P   L   A   N   E   T
@@ -182,11 +182,11 @@ print(s[2:5])</pre>`,
       minutes: 10,
       sources: [
         { label: "Built-in Types: String Methods",
-          url: "https://docs.python.org/3/library/stdtypes.html" },
+          url: "https://docs.python.org/3/builtins/stdtypes.html#string-methods" },
         { label: "The Python Tutorial, 7. Input and Output (formatted string literals)",
-          url: "https://docs.python.org/3/tutorial/inputoutput.html" },
+          url: "https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals" },
         { label: "Lexical analysis: f-strings",
-          url: "https://docs.python.org/3/reference/lexical_analysis.html" }
+          url: "https://docs.python.org/3/reference/lexical_analysis.html#f-strings" }
       ],
       body: `<p>A <em>method</em> is a function that belongs to a value. You call it with a dot: <code>value.method()</code>. Because strings are immutable, string methods never change the original; they <strong>return a new string</strong> (or another result).</p>
 <h3>Changing case and trimming</h3>

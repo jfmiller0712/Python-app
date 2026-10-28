@@ -103,7 +103,7 @@ print(x)</pre>`,
         { label: "The Python Tutorial, 4.2 for Statements and 4.3 The range() Function",
           url: "https://docs.python.org/3/tutorial/controlflow.html" },
         { label: "Built-in Types: Ranges",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html" }
       ],
       body: `<p>A <code>for</code> loop goes through the items of a sequence one at a time. Each time around, the loop variable refers to the next item.</p>
 <h3>Looping over a string</h3>
@@ -193,7 +193,7 @@ for ch in "moon":
       title: "break, continue, else, and Nested Loops",
       minutes: 10,
       sources: [
-        { label: "The Python Tutorial, 4.4 break and continue Statements, and else Clauses on Loops",
+        { label: "The Python Tutorial, 4.4 break and continue Statements; 4.5 else Clauses on Loops",
           url: "https://docs.python.org/3/tutorial/controlflow.html" },
         { label: "Language Reference, 7. Simple statements (break, continue)",
           url: "https://docs.python.org/3/reference/simple_stmts.html" }

@@ -11,11 +11,11 @@ registerModule({
       minutes: 9,
       sources: [
         { label: "Built-in Functions: input(), bool()",
-          url: "https://docs.python.org/3/library/functions.html" },
+          url: "https://docs.python.org/3/builtins/functions.html" },
         { label: "Built-in Types: Comparisons and Boolean Values",
-          url: "https://docs.python.org/3/library/stdtypes.html" },
+          url: "https://docs.python.org/3/builtins/stdtypes.html" },
         { label: "Language Reference, 6. Expressions (comparisons)",
-          url: "https://docs.python.org/3/reference/expressions.html" }
+          url: "https://docs.python.org/3/reference/expressions.html#comparisons" }
       ],
       body: `<p>Programs become interesting when they react to the person using them. The built-in <code>input()</code> function pauses, shows an optional prompt, waits for the user to type a line, and returns what they typed.</p>
 <pre class="code">name = input("Pilot name: ")
@@ -48,7 +48,7 @@ print(0 &lt; fuel &lt;= 100)       # comparisons can be chained</pre>
 <div class="warn"><strong>Watch out</strong> One <code>=</code> assigns; two <code>==</code> compare. Writing <code>if x = 5:</code> is a <code>SyntaxError</code>.</div>
 <h3>Comparing different types</h3>
 <p><code>"5" == 5</code> is <code>False</code>: a string is never equal to a number. This is the most common bug with <code>input()</code>. Ordering a string against a number, as in <code>"5" &lt; 10</code>, raises a <code>TypeError</code>. Convert first.</p>
-<p>Strings compare character by character using their Unicode code points, so <code>"apple" &lt; "banana"</code> is <code>True</code>, but all capital letters sort before lowercase ones.</p>
+<p>Strings compare character by character using their Unicode code points, so <code>"apple" &lt; "banana"</code> is <code>True</code>, but the capital letters A to Z all sort before the lowercase a to z.</p>
 <div class="tip"><strong>Tip</strong> Because of how floats are stored, <code>0.1 + 0.2 == 0.3</code> is <code>False</code>. When comparing floats, compare after rounding, or check that the difference is very small.</div>`,
       quiz: [
         { q: `If the user types <code>7</code>, what is the type of <code>x</code> after <code>x = input()</code>?`,
@@ -94,11 +94,11 @@ print(0 &lt; fuel &lt;= 100)       # comparisons can be chained</pre>
       minutes: 10,
       sources: [
         { label: "The Python Tutorial, 4.1 if Statements",
-          url: "https://docs.python.org/3/tutorial/controlflow.html" },
+          url: "https://docs.python.org/3/tutorial/controlflow.html#if-statements" },
         { label: "Language Reference, 8. Compound statements (the if statement)",
-          url: "https://docs.python.org/3/reference/compound_stmts.html" },
+          url: "https://docs.python.org/3/reference/compound_stmts.html#the-if-statement" },
         { label: "Built-in Types: Boolean Operations - and, or, not",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html#boolean-operations-and-or-not" }
       ],
       body: `<p>An <code>if</code> statement runs a block of code only when a condition is true.</p>
 <pre class="code" data-run>fuel = 15
@@ -185,9 +185,9 @@ else:
       minutes: 10,
       sources: [
         { label: "Built-in Types: Truth Value Testing",
-          url: "https://docs.python.org/3/library/stdtypes.html" },
+          url: "https://docs.python.org/3/builtins/stdtypes.html#truth-value-testing" },
         { label: "The Python Tutorial, 4. More Control Flow Tools (match statements)",
-          url: "https://docs.python.org/3/tutorial/controlflow.html" },
+          url: "https://docs.python.org/3/tutorial/controlflow.html#match-statements" },
         { label: "PEP 636 - Structural Pattern Matching: Tutorial",
           url: "https://peps.python.org/pep-0636/" }
       ],

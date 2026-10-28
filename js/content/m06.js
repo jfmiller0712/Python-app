@@ -13,7 +13,7 @@ registerModule({
         { label: "The Python Tutorial, 3. An Informal Introduction to Python (Lists)",
           url: "https://docs.python.org/3/tutorial/introduction.html" },
         { label: "Built-in Types: Sequence Types (list, tuple, range)",
-          url: "https://docs.python.org/3/library/stdtypes.html" }
+          url: "https://docs.python.org/3/builtins/stdtypes.html" }
       ],
       body: `<p>So far each variable has held a single value. A <strong>list</strong> holds many values in a fixed order. You write a list with square brackets and separate the items with commas.</p>
 <pre class="code" data-run>crates = ["fuel", "oxygen", "food"]
@@ -117,7 +117,7 @@ print(crates)`
         { label: "Sorting Techniques (HOWTO)",
           url: "https://docs.python.org/3/howto/sorting.html" },
         { label: "Built-in Functions: sorted(), len()",
-          url: "https://docs.python.org/3/library/functions.html" }
+          url: "https://docs.python.org/3/builtins/functions.html" }
       ],
       body: `<p>Lists come with <strong>methods</strong>: actions you call with a dot, like <code>crates.append("fuel")</code>. Most list methods change the list in place.</p>
 <h3>Adding items</h3>
@@ -233,7 +233,7 @@ print(readings)`
         { label: "The Python Tutorial, 5. Data Structures (List Comprehensions; Tuples and Sequences)",
           url: "https://docs.python.org/3/tutorial/datastructures.html" },
         { label: "Built-in Types: Sequence Types (list, tuple, range)",
-          url: "https://docs.python.org/3/library/stdtypes.html" },
+          url: "https://docs.python.org/3/builtins/stdtypes.html" },
         { label: "PEP 3132: Extended Iterable Unpacking",
           url: "https://peps.python.org/pep-3132/" }
       ],

@@ -11,11 +11,11 @@ registerModule({
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 9.8 Iterators",
-          url: "https://docs.python.org/3/tutorial/classes.html" },
+          url: "https://docs.python.org/3/tutorial/classes.html#iterators" },
         { label: "Python Glossary: iterable, iterator",
           url: "https://docs.python.org/3/glossary.html" },
         { label: "Built-in Functions: iter(), next()",
-          url: "https://docs.python.org/3/library/functions.html" }
+          url: "https://docs.python.org/3/builtins/functions.html" }
       ],
       body: `<p>A <code>for</code> loop works on lists, strings, dicts, ranges and files. They all share one ability: they are <strong>iterable</strong>. This lesson shows the machinery behind that.</p>
 <h3>Iterables and iterators</h3>
@@ -134,9 +134,9 @@ assert take(range(5), 5) == [0, 1, 2, 3, 4]` }
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 9.9 Generators and 9.10 Generator Expressions",
-          url: "https://docs.python.org/3/tutorial/classes.html" },
+          url: "https://docs.python.org/3/tutorial/classes.html#generators" },
         { label: "Functional Programming HOWTO (Generators)",
-          url: "https://docs.python.org/3/howto/functional.html" },
+          url: "https://docs.python.org/3/howto/functional.html#generators" },
         { label: "PEP 255: Simple Generators",
           url: "https://peps.python.org/pep-0255/" }
       ],
@@ -253,7 +253,7 @@ def sum_of_squares(n):
       minutes: 11,
       sources: [
         { label: "Built-in Functions: enumerate, zip, sorted, min, max, sum, any, all",
-          url: "https://docs.python.org/3/library/functions.html" },
+          url: "https://docs.python.org/3/builtins/functions.html" },
         { label: "Sorting Techniques HOWTO",
           url: "https://docs.python.org/3/howto/sorting.html" },
         { label: "itertools: Functions creating iterators for efficient looping",

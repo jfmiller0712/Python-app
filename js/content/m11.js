@@ -11,9 +11,9 @@ registerModule({
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 7.2 Reading and Writing Files",
-          url: "https://docs.python.org/3/tutorial/inputoutput.html" },
+          url: "https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files" },
         { label: "Built-in Functions: open()",
-          url: "https://docs.python.org/3/library/functions.html" },
+          url: "https://docs.python.org/3/builtins/functions.html#open" },
         { label: "io: Core tools for working with streams (StringIO)",
           url: "https://docs.python.org/3/library/io.html" }
       ],
@@ -27,7 +27,7 @@ registerModule({
 with open("crew.txt", encoding="utf-8") as f:
     text = f.read()
 print(text)</pre>
-<p>These examples touch a real disk, so they have no Run button here. Passing <code>encoding="utf-8"</code> is a good habit: without it, the default encoding depends on your computer.</p>
+<p>These examples touch a real disk, so they have no Run button here. Passing <code>encoding="utf-8"</code> is a good habit: Python 3.15 and later default to UTF-8, but older versions use an encoding that depends on your computer.</p>
 <h3>File modes</h3>
 <ul>
   <li><code>"r"</code> read (the default). Missing file: <code>FileNotFoundError</code>.</li>
@@ -128,7 +128,7 @@ assert read_log(io.StringIO("")) == []` }
       minutes: 9,
       sources: [
         { label: "The Python Tutorial, 7.2.2 Saving structured data with json",
-          url: "https://docs.python.org/3/tutorial/inputoutput.html" },
+          url: "https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json" },
         { label: "json: JSON encoder and decoder",
           url: "https://docs.python.org/3/library/json.html" }
       ],
