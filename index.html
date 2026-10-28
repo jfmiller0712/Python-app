@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>Python Galaxy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Learn Python from your first print() to professional code, one world at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Syncopate:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:body -->
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#map" aria-label="Python Galaxy home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="bg-core" cx="40%" cy="35%" r="70%">
+            <stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#ffcf6e"/><stop offset="1" stop-color="#b98cff"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="16" cy="16" rx="15" ry="6" fill="none" stroke="#6ee7ff" stroke-width="1.4" transform="rotate(-24 16 16)"/>
+        <circle cx="16" cy="16" r="7" fill="url(#bg-core)"/>
+        <circle cx="28" cy="10" r="1.6" fill="#ff7ab6"/>
+      </svg>
+      Python Galaxy
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#map" data-nav="map">Galaxy Map</a>
+      <a href="#daily" data-nav="daily">Daily Orbit</a>
+      <a href="#lab" data-nav="lab">Lab</a>
+      <a href="#achievements" data-nav="achievements">Captain's Log</a>
+    </nav>
+    <div class="hud" id="hud"></div>
+  </div>
+</header>
+
+<main id="view" tabindex="-1"></main>
+<div id="toasts" aria-live="polite"></div>
+<canvas id="burst" aria-hidden="true"></canvas>
+<div id="modal" hidden></div>
+
+<script>
+  window.CURRICULUM = [];
+  window.registerModule = function (m) { window.CURRICULUM.push(m); };
+  window.PY = { ready: new Promise(function (res) { window.__pyReady = res; }) };
+</script>
+<!-- build:content -->
+<script src="js/content/m01.js"></script>
+<script src="js/content/m02.js"></script>
+<script src="js/content/m03.js"></script>
+<script src="js/content/m04.js"></script>
+<script src="js/content/m05.js"></script>
+<script src="js/content/m06.js"></script>
+<script src="js/content/m07.js"></script>
+<script src="js/content/m08.js"></script>
+<script src="js/content/m09.js"></script>
+<script src="js/content/m10.js"></script>
+<script src="js/content/m11.js"></script>
+<script src="js/content/m12.js"></script>
+<script src="js/content/m13.js"></script>
+<script src="js/content/m14.js"></script>
+<!-- /build:content -->
+<script src="js/game.js"></script>
+<script src="js/app.js"></script>
+<script src="vendor/brython.min.js"></script>
+<script src="vendor/brython_stdlib.js"></script>
+<script type="text/python" id="runner">
+# Bridge between the page and Brython: runs learner code and challenge tests.
+from browser import window
+import sys
+import json
+
+# Brython's json raises a plain Exception on bad input; CPython raises
+# json.JSONDecodeError, a ValueError. Match CPython so lessons stay accurate.
+class JSONDecodeError(ValueError):
+    pass
+
+
+def _strict(fn):
+    def wrapper(*args, **kwargs):
+        try:
+            return fn(*args, **kwargs)
+        except (ValueError, TypeError, RecursionError):
+            raise
+        except Exception as e:
+            raise JSONDecodeError(str(e)) from None
+    return wrapper
+
+
+json.JSONDecodeError = JSONDecodeError
+json.loads = _strict(json.loads)
+json.load = _strict(json.load)
+
+
+class _Sink:
+    def __init__(self):
+        self.parts = []
+
+    def write(self, s):
+        s = str(s)
+        self.parts.append(s)
+        return len(s)
+
+    def flush(self):
+        pass
+
+    def text(self):
+        return "".join(self.parts)
+
+
+def _err_info(e):
+    info = {"type": type(e).__name__, "message": str(e), "line": None}
+    if isinstance(e, SyntaxError):
+        info["line"] = e.lineno
+        info["message"] = getattr(e, "msg", None) or str(e)
+        return info
+    tb = e.__traceback__
+    while tb is not None:
+        if tb.tb_frame.f_code.co_filename in ("<string>", "<learner>"):
+            info["line"] = tb.tb_lineno
+        tb = tb.tb_next
+    return info
+
+
+def run(code, stdin_json, tests_json):
+    stdin = json.loads(stdin_json)
+    tests = json.loads(tests_json)
+    out = _Sink()
+
+    def fake_input(prompt=""):
+        out.write(str(prompt))
+        if not stdin:
+            raise EOFError("No more input available")
+        value = stdin.pop(0)
+        out.write(value + "\n")
+        return value
+
+    ns = {"__name__": "__main__", "input": fake_input}
+    old_out, old_err = sys.stdout, sys.stderr
+    sys.stdout = out
+    sys.stderr = out
+    error = None
+    try:
+        # exec() of a str keeps docstrings in Brython; compile() drops them.
+        exec(code, ns)
+    except SystemExit:
+        pass
+    except BaseException as e:
+        error = _err_info(e)
+    finally:
+        sys.stdout, sys.stderr = old_out, old_err
+    output = out.text()
+    ns["__output__"] = output
+    results = []
+    for test in tests:
+        sys.stdout = _Sink()
+        try:
+            exec(test, ns)
+            results.append({"ok": True})
+        except BaseException as e:
+            detail = str(e)
+            results.append({"ok": False, "error": type(e).__name__ + (": " + detail if detail else "")})
+        finally:
+            sys.stdout = old_out
+    return json.dumps({"output": output, "error": error, "results": results})
+
+
+window.pyRunJSON = run
+window.__pyReady()
+</script>
+<!-- /build:body -->
+</body>
+</html>
