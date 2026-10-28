@@ -8,6 +8,14 @@ professional Python. It runs entirely in your browser, with no install and no ac
 - **Quickest:** open `index.html` in a browser (double-click it).
 - **Or serve it:** `python3 -m http.server 8000`, then visit http://localhost:8000.
 
+### Put it on your phone's home screen
+
+Host the folder on GitHub Pages (repo **Settings → Pages → Deploy from a
+branch → `main` / `(root)`**), open the Pages address in Safari, then tap
+**Share → Add to Home Screen**. It opens full screen with its own icon and,
+after the first visit, works offline. Updates arrive the next time you open
+it online.
+
 Python code runs in the page through [Brython](https://brython.info), which
 is included in `vendor/`, so lessons work offline. The fonts load from Google
 Fonts when you are online and fall back to system fonts when you are not.
